@@ -1,0 +1,37 @@
+.close-button {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  top: calc((-15px - 2rem));
+  right: calc((-15px - 2rem));
+  background-image: url(../../images/icons/button-close.svg);
+  background-size: contain;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.6);
+  }
+}
+
+.modal-window {
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  background-color: #274059cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    position: relative;
+    height: 60vh;
+    width: 60vw;
+    border: 5px solid #000;
+    outline: 10px solid #fff;
+    // background-color: #fff;
+    background-image: url(../../images/modal-bg-image.jpg);
+
+  }
+}

@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  // font-family:'Courier New', Courier, monospace;
+  // font-family:"Comic Sans MS", "Comic Sans", cursive;
+  // font-family: "Bangers";
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./images/main-bg-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-button {
+  height: 20vh;
+  width: 40vw;
+  background-image: url('../src/images/main-button-image-bg.avif');
+  background-position: center;
+  border: 5px solid #000;
+  outline: 10px solid #fff;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  rotate: -10deg;
+
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1c0909;
+
+  transition-duration: 200ms;
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}

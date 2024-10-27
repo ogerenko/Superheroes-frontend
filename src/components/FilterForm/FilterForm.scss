@@ -1,0 +1,57 @@
+// @import '../../utils/stylesUtils/variables.scss';
+// @import '../../utils/stylesUtils/mixin.scss';
+
+// @keyframes moveFromLeft {
+//   0% {
+//     transform: translateX(-25%);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+// }
+
+// 
+.filter-form {
+  row-gap: 16px;
+  position: relative;
+
+}
+
+
+
+
+
+
+
+.input-form {
+  height: 40px;
+  border: 1px solid #b4bdc3;
+  box-sizing: border-box;
+  padding: 10px;
+
+  font-family: 'Regular';
+  font-size: 14px;
+  line-height: 21px;
+  color: #313237;
+
+  &:hover {
+    border: 1px solid #89939a;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #368052;
+  }
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    // background-image: url(../../../public/img/icons-image/button-close.svg);
+    // background-repeat: no-repeat;
+    // background-position: center;
+    cursor: pointer;
+  }
+}

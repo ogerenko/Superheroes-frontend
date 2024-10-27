@@ -1,0 +1,216 @@
+.detail-hero {
+  background-image: url(../../images/detail-hero-image-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  padding: 5vw;
+  overflow: hidden;
+  display: flex;
+
+  // gap: 20px;
+  &__card {
+    // background-color: #8c6fdc84;
+
+    height: 100%;
+    width: 100%;
+    padding-left: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  &__controls {
+    // position: relative;
+    // background-color: #ffffff;
+    height: 3rem;
+    width: 11rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__image {
+    border: 5px solid #1f1f1f;
+    outline: 10px solid #fff;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    // min-width: 300px;
+    // max-width: 500px;
+    background-image: url(../../images/default-hero-image.jpg);
+    background-position: center;
+    background-size: cover;
+    left: 110%;
+    top: 35%;
+  }
+
+  &__info {
+    align-self: flex-start;
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: end;
+    overflow: hidden;
+
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #030303,
+      2px 2px 0 #000000;
+  }
+
+  &__name {
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+
+  &__phrase {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+
+  &__superpowers {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+
+  &__history {
+    font-size: 2rem;
+    color: #89f789;
+  }
+}
+
+.controls {
+  &__button {
+    height: 3rem;
+    width: 3rem;
+    background-size: cover;
+    transition-duration: 200ms;
+    position: relative;
+
+    &:hover {
+      filter: brightness(1.6);
+      cursor: pointer;
+    }
+
+    &--add {
+      background-image: url(../../images/icons/button-add.svg);
+
+      transition-duration: 200ms;
+      &::before {
+        content: "Add a new hero";
+        position: absolute;
+        font-size: 1.2rem;
+        top: 130%;
+        right: 0;
+        height: 50%;
+        width: 300%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3d8c4ea2;
+
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &--edit {
+      background-image: url(../../images/icons/button-edit.svg);
+
+      transition-duration: 200ms;
+      &::before {
+        content: "Edit this hero";
+        position: absolute;
+        font-size: 1.2rem;
+        top: 130%;
+        right: 0;
+        height: 50%;
+        width: 300%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3d8c4ea2;
+
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &--delete {
+      background-image: url(../../images/icons/button-delete.svg);
+
+      transition-duration: 200ms;
+      &::before {
+        content: "Delete this hero";
+        position: absolute;
+        font-size: 1.2rem;
+        top: 130%;
+        right: 0;
+        height: 50%;
+        width: 300%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3d8c4ea2;
+
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+.name {
+  &__nickname {
+    font-size: 4rem;
+  }
+
+  &__real-name {
+    color: #ffffff;
+  }
+}
+
+.phrase {
+  &__catchphrase {
+    font-size: 3rem;
+    color: #e66152;
+  }
+
+  &__description {
+    color: #eaf5b4;
+  }
+}
+
+.superpowers {
+  &__values {
+    font-size: 2rem;
+  }
+
+  &__description {
+    color: #eaf5b4;
+  }
+}
