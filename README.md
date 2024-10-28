@@ -4,7 +4,7 @@
 
 A React-based frontend application to manage superhero data. The application supports adding, viewing, and editing superheroes and integrates with an API backend to fetch and store superhero details.
 
-  - [DEMO LINK](https://ogerenko.github.io/superheroes-frontend/)
+  - [DEMO LINK](https://ogerenko.github.io/Superheroes-frontend/)
 
 ## Technologies
 
