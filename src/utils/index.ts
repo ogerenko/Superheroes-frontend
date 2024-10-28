@@ -1,13 +1,12 @@
-
 export const adaptivePaginationPages = (
   pages: number[],
-  activePage: number,
+  activePage: number
 ) => {
   if (pages.length <= 7) {
     return pages;
   }
 
-  const emptyElement = ['...'];
+  const emptyElement = ["..."];
   const activePageIndex = pages.indexOf(activePage);
   const fifthFromEndIndex = pages.length - 1 - 4;
 

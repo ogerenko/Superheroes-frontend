@@ -1,5 +1,6 @@
-import { useSearchParams } from 'react-router-dom';
 import './FilterForm.scss';
+
+import { useSearchParams } from 'react-router-dom';
 
 export const FilterForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,9 +22,9 @@ export const FilterForm = () => {
   return (
     <div className="filter-form">
       <input
-        className="filter-form__search input-form"
+        className="filter__input"
         type="search"
-        placeholder="search"
+        placeholder="search..."
         value={queryParam}
         onChange={handleQueryChange}
       />

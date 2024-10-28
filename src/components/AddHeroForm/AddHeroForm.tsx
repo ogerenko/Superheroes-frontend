@@ -1,37 +1,48 @@
-import React, { useContext } from "react";
 import "./AddHeroForm.scss";
+import React, { useContext } from "react";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Hero } from "../../types/Hero";
-import { ModalWindowIs } from "../../pages/DetailHero";
 import { HeroContext } from "../../context/HeroContext";
-import { addHero, getHeroes } from "../../utils/api";
+import { addHero, getHeroes, updateHero } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
-// import { getHeroes } from "../../utils/api";
+import { ModalWindowIs } from "../../types/ModalWindowIs";
 
 type Props = {
   onModal: (flag: ModalWindowIs) => void;
+  currentHero?: Hero;
+  onCurrentHero: (hero: Hero) => void;
 };
 
-export const AddHeroForm: React.FC<Props> = ({ onModal }) => {
+export const AddHeroForm: React.FC<Props> = ({ onModal, currentHero, onCurrentHero}) => {
   const { allHeroes, setAllHeroes } = useContext(HeroContext);
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Hero>();
+  } = useForm<Hero>({
+    defaultValues: currentHero || {},
+  });
 
   const onSubmit: SubmitHandler<Hero> = async (data) => {
-    try {
-      const maxId = (Math.max(...allHeroes.map((h) => +h.id)) + 1).toString();
+    const maxId = (Math.max(...allHeroes.map((h) => +h.id)) + 1).toString();
 
-      await addHero({ ...data, id: maxId });
+    try {
+      if (currentHero) {
+        await updateHero(currentHero.id, data);
+        onCurrentHero({...currentHero, ...data})
+      } else {
+        const newHero: Hero = { ...data, id: maxId };
+        await addHero(newHero);
+        onCurrentHero(newHero);
+      }
+
 
       const updatedHeroes = await getHeroes();
       setAllHeroes(updatedHeroes);
 
-      navigate(`/hero/${maxId}`);
+      navigate(`/hero/${currentHero ? currentHero.id : maxId}`);
       onModal(false);
 
       

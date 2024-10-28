@@ -1,24 +1,26 @@
-import { useNavigate, useParams } from "react-router-dom";
 import "./DetailHero.scss";
-import { useEffect, useState } from "react";
-import { Hero } from "../../types/Hero";
-import { getHero } from "../../utils/api";
-import { ModalWindow } from "../../components/ModalWindow";
 
-export type ModalWindowIs = "add" | "edit" | "delete" | false;
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { ModalWindow } from "../../components/ModalWindow";
+import { getHero } from "../../utils/api";
+import { Hero } from "../../types/Hero";
+import { ModalWindowIs } from "../../types/ModalWindowIs";
 
 export const DetailHero = () => {
   const { heroId = "" } = useParams();
+
   const [currentHero, setCurrentHero] = useState<Hero | null>(null);
   const [modalWindow, setModalWindow] = useState<ModalWindowIs>(false);
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getHero(heroId)
       .then(setCurrentHero)
       .catch((err) => {
         console.error("Error fetching hero", err);
-        navigate('/heroes-list');
+        navigate("/heroes-list");
       });
   }, [heroId, navigate]);
 
@@ -73,7 +75,12 @@ export const DetailHero = () => {
         </div>
       </div>
       {modalWindow && (
-        <ModalWindow onModal={setModalWindow} modalIs={modalWindow} />
+        <ModalWindow
+          onModal={setModalWindow}
+          modalIs={modalWindow}
+          currentHero={currentHero as Hero}
+          onCurrentHero={setCurrentHero}
+        />
       )}
     </div>
   );

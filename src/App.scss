@@ -1,9 +1,6 @@
 body {
   margin: 0;
-  // font-family:'Courier New', Courier, monospace;
-  // font-family:"Comic Sans MS", "Comic Sans", cursive;
-  // font-family: "Bangers";
-  font-family: 'Bangers', cursive;
+  font-family: "Bangers", cursive;
   letter-spacing: 2px;
 }
 
@@ -25,8 +22,7 @@ body {
 
 .start-button {
   height: 20vh;
-  width: 40vw;
-  background-image: url('../src/images/main-button-image-bg.avif');
+  background-image: url("../src/images/main-button-image-bg.avif");
   background-position: center;
   border: 5px solid #000;
   outline: 10px solid #fff;
@@ -36,12 +32,12 @@ body {
   align-items: center;
   justify-content: center;
   rotate: -10deg;
-
+  
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  color: #1c0909;
+  color: #000000;
 
   transition-duration: 200ms;
 

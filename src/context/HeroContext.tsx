@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Hero } from "../types/Hero";
+
 import { getHeroes } from "../utils/api";
+import { Hero } from "../types/Hero";
 
 type PropsContext = {
   allHeroes: Hero[];

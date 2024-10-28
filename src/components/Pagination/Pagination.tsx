@@ -1,8 +1,9 @@
-import { useSearchParams } from "react-router-dom";
 import "./Pagination.scss";
-import { Hero } from "../../types/Hero";
+
 import React from "react";
 import classNames from "classnames";
+import { useSearchParams } from "react-router-dom";
+import { Hero } from "../../types/Hero";
 import { adaptivePaginationPages } from "../../utils";
 
 type Props = {
@@ -15,7 +16,6 @@ export const Pagination: React.FC<Props> = ({ heroes }) => {
   const pageParam = searchParams.get("page") || 1;
 
   const amountOfPages = () => {
-    // тут надо сделать функцию что бы ей передавать HEROES, searchParams
     const pagesAmount = Math.ceil(heroes.length / 5 || 0);
 
     return Array.from({ length: pagesAmount }, (_, index) => index + 1);
@@ -48,37 +48,36 @@ export const Pagination: React.FC<Props> = ({ heroes }) => {
   return amountOfPages().length > 1 ? (
     <div className="pagination">
       <button
-        className={classNames('pagination__button pagination__button--prev', {
-          'pagination__button--prev--disabled':
+        className={classNames("pagination__button pagination__button--prev", {
+          "pagination__button--prev--disabled":
             +pageParam === amountOfPages()[0],
         })}
         disabled={+pageParam === amountOfPages()[0]}
         onClick={handlePrevPageChange}
       />
 
-      {adaptivePaginationPages(amountOfPages(), +pageParam).map(
-        (page, index) =>
-          page !== '...' ? (
-            <button
-              className={classNames('pagination__button', {
-                pagination__active: +pageParam === page,
-              })}
-              key={page}
-              onClick={() => handlePageChange(+page)}
-            >
-              {page}
-            </button>
-          ) : (
-            <div className="pagination__darks" key={`${page}${index}`}>
-              {page}
-            </div>
-          ),
+      {adaptivePaginationPages(amountOfPages(), +pageParam).map((page, index) =>
+        page !== "..." ? (
+          <button
+            className={classNames("pagination__button", {
+              pagination__active: +pageParam === page,
+            })}
+            key={page}
+            onClick={() => handlePageChange(+page)}
+          >
+            {page}
+          </button>
+        ) : (
+          <div className="pagination__darks" key={`${page}${index}`}>
+            {page}
+          </div>
+        )
       )}
 
       <button
         disabled={+pageParam === amountOfPages()[amountOfPages().length - 1]}
-        className={classNames('pagination__button pagination__button--next', {
-          'pagination__button--next--disabled':
+        className={classNames("pagination__button pagination__button--next", {
+          "pagination__button--next--disabled":
             +pageParam === amountOfPages()[amountOfPages().length - 1],
         })}
         onClick={handleNextPageChange}

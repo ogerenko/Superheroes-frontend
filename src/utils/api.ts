@@ -16,14 +16,11 @@ const request = async <T>(
   return responseData as T;
 };
 
-// get all heroes
 export const getHeroes = (): Promise<Hero[]> => request<Hero[]>("/heroes/all");
 
-// get hero by id
 export const getHero = (id: string): Promise<Hero> =>
   request<Hero>(`/heroes/${id}`);
 
-// post new hero
 export const addHero = (heroData: Hero): Promise<Hero> =>
   request<Hero>("/heroes", {
     method: "POST",
@@ -33,7 +30,6 @@ export const addHero = (heroData: Hero): Promise<Hero> =>
     body: JSON.stringify(heroData),
   });
 
-// put update hero
 export const updateHero = (
   id: string,
   heroData: Partial<Hero>
@@ -46,7 +42,6 @@ export const updateHero = (
     body: JSON.stringify(heroData),
   });
 
-// delete a hero
 export const deleteHero = (id: string): Promise<void> =>
   request<void>(`/heroes/${id}`, {
     method: "DELETE",

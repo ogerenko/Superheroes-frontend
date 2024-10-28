@@ -9,14 +9,10 @@
   overflow: hidden;
   display: flex;
 
-  // gap: 20px;
   &__card {
-    // background-color: #8c6fdc84;
-
     height: 100%;
     width: 100%;
     padding-left: 2rem;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,8 +20,6 @@
   }
 
   &__controls {
-    // position: relative;
-    // background-color: #ffffff;
     height: 3rem;
     width: 11rem;
     display: flex;
@@ -38,8 +32,6 @@
     height: 100%;
     width: 50%;
     object-fit: cover;
-    // min-width: 300px;
-    // max-width: 500px;
     background-image: url(../../images/default-hero-image.jpg);
     background-position: center;
     background-size: cover;

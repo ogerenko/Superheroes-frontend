@@ -10,17 +10,12 @@ p {
   padding-inline: 2rem;
   padding-block: 1rem;
   color: #fff;
-  text-shadow: 
-    -1px -1px 0 #000000,
-    1px -1px 0 #000000,
-    -1px 1px 0 #030303,
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #030303,
     1px 1px 0 #000000;
   gap: 1rem;
 
   &__container {
-
     &-input {
-      // background-color: #63353569;
       display: flex;
       width: 50%;
       height: 100%;
@@ -29,7 +24,6 @@ p {
     }
 
     &-submit {
-      // background-color: #3835638d;
       display: flex;
       width: 50%;
       height: 100%;
@@ -51,7 +45,6 @@ p {
   top: 0;
   right: 0;
   color: #ca2a2a;
-  // font-size: 0.7rem;
 }
 
 .button-submit {
@@ -60,8 +53,8 @@ p {
   right: 20%;
   height: 100px;
   width: 100px;
-  border: 3px solid #000 ;
-  outline: 6px solid #fff ;
+  border: 3px solid #000;
+  outline: 6px solid #fff;
   border-radius: 50%;
   background-color: #ca2a2a;
   font-family: inherit;
@@ -74,7 +67,4 @@ p {
     transform: scale(1.1);
     cursor: pointer;
   }
-
 }
-
-
